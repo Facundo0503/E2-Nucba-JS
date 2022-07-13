@@ -1,13 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="main.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>E2 NUCBA</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <main>
+      <h1>Busque su pizza🍕</h1>
+      <h2 id="name"></h2>
+      <h4 id="price"></h4>
+      <input
+        type="number"
+        name="number"
+        id="number"
+        class="number"
+        placeholder="Id de la pizza"
+      />
+      <button id="submit">Buscar</button>
+      <span id="error__container"></span>
+      <section class="pizza-gallery">
+        <article class="pizza1">
+          <figure>
+            <img
+              class="pizza-pic1"
+              src="./img/pizza_de_mozzarella.jpg"
+              alt=""
+            />
+          </figure>
+          <p class="pizza-p1">ID: #1</p>
+        </article>
+        <article class="pizza2">
+          <figure>
+            <img class="pizza-pic2" src="./img/pizza_fugazza.jpg" alt="" />
+          </figure>
+          <p class="pizza-p2">ID: #2</p>
+        </article>
+        <article class="pizza3">
+          <figure>
+            <img class="pizza-pic3" src="./img/pizza_napolitana.jpg" alt="" />
+          </figure>
+          <p class="pizza-p3">ID: #3</p>
+        </article>
+        <article class="pizza4">
+          <figure>
+            <img class="pizza-pic4" src="./img/pizza-hawaiana.jpg" alt="" />
+          </figure>
+          <p class="pizza-p4">ID: #4</p>
+        </article>
+        <article class="pizza5">
+          <figure>
+            <img class="pizza-pic5" src="./img/anchoas.jpg" alt="" />
+          </figure>
+          <p class="pizza-p5">ID: #5</p>
+        </article>
+        <article class="pizza6">
+          <figure>
+            <img class="pizza-pic6" src="./img/pizza-anana.jpg" alt="" />
+          </figure>
+          <p class="pizza-p6">ID: #6</p>
+        </article>
+      </section>
+    </main>
+    <script src="main.js"></script>
+  </body>
 </html>
