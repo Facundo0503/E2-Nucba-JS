@@ -89,18 +89,29 @@ const input = document.getElementById("number");
 const pizzaCont = document.getElementById("pizzas");
 const errorContainer = document.getElementById("error__container");
 
-button.addEventListener("click", (e) => {
-  let inputId = Number(input.value);
-  let price = pizzas.find((item) => item.id === inputId);
+button.addEventListener("click", () => {
+  let inputId = input.value;
 
-  pizzaName.innerHTML = price.nombre;
-  pizzaPrice.innerHTML = `$${price.precio}`;
-
-  if (price === "") {
-    showError("asd");
+  if (inputId === "") {
+    showError("Por favor ingrese un ID");
     return;
   }
+  createHTML(inputId);
 });
+
+function createHTML(e) {
+  let pizza = pizzas.filter((i) => i.id === Number(e));
+
+  pizzaName.innerHTML = pizza.map((i) => i.nombre);
+  pizzaPrice.innerHTML = pizza.map((i) => `$${i.precio}`);
+
+  if (e <= 0 || e > pizzas.length) {
+    showError("No coincide con ningun ID");
+    pizzaName.innerHTML = "Escriba un ID";
+  }
+
+  input.value = "";
+}
 
 function showError(error) {
   const msgError = document.createElement("p");
@@ -109,5 +120,22 @@ function showError(error) {
   errorContainer.appendChild(msgError);
   setTimeout(() => {
     msgError.remove();
-  }, 2000);
+  }, 2500);
 }
+
+/* button.addEventListener("click", (e) => {
+  let inputId = input.value;
+  let price = pizzas.filter((item) => item.id === inputId);
+
+  pizzaName.innerHTML = price.map((item) => item.nombre);
+  pizzaPrice.innerHTML = price.map((item) => `$${item.precio}`);
+
+  if (inputId === "") {
+    showError("Ingresá algo pa!");
+    return;
+  }
+
+  if (inputId <= 0 || inputId > pizzas.length) {
+    showError("ID fail");
+  }
+}); */
